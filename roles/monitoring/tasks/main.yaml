@@ -1,0 +1,13 @@
+- name: Add Prometheus Stack Helm repository
+  kubernetes.core.helm_repository:
+    name: prometheus-community
+    repo_url: "{{ prometheus_stack_url }}"
+
+- name: Install Grafana
+  kubernetes.core.helm:
+    name: monitoring
+    chart_ref: prometheus-community/kube-prometheus-stack
+    release_namespace: monitoring
+    create_namespace: true
+    wait: true
+    timeout: 1m
