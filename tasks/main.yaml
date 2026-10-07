@@ -1,0 +1,16 @@
+- name: Report start of monitoring installation
+  ansible.builtin.debug:
+    msg:
+      - "=================================================="
+      - "Monitoring installation..."
+      - "=================================================="
+
+- name: Install kube-prometheus-stack
+  ansible.builtin.include_tasks: 0-install-monitoring.yaml
+
+- name: Report successful completion of monitoring installation
+  ansible.builtin.debug:
+    msg:
+      - "=================================================="
+      - "Monitoring installation completed successfully."
+      - "=================================================="

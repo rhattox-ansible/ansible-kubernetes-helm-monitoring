@@ -4,5 +4,8 @@
   gather_facts: true
   vars:
     ansible_python_interpreter: /opt/ansible-venv/bin/python
-  roles:
-    - monitoring
+  vars_files:
+    - defaults/main.yaml
+  tasks:
+    - name: Install kube-prometheus-stack Helm chart
+      ansible.builtin.include_tasks: "tasks/main.yaml"

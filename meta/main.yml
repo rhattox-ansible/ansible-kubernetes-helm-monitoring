@@ -1,0 +1,12 @@
+galaxy_info:
+  role_name: ansible_kubernetes_helm_monitoring
+  description: Install kube-prometheus-stack on Kubernetes with Helm.
+  min_ansible_version: "2.10"
+  galaxy_tags:
+    - kubernetes
+    - helm
+    - monitoring
+    - prometheus
+    - grafana
+
+dependencies: []

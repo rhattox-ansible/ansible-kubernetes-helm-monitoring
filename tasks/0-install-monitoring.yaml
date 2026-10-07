@@ -1,9 +1,9 @@
-- name: Add Prometheus Stack Helm repository
+- name: Add Prometheus Community Helm repository
   kubernetes.core.helm_repository:
     name: prometheus-community
     repo_url: "{{ prometheus_stack_url }}"
 
-- name: Install Grafana
+- name: Install kube-prometheus-stack (Prometheus, Grafana, and Alertmanager)
   kubernetes.core.helm:
     name: monitoring
     chart_ref: prometheus-community/kube-prometheus-stack
